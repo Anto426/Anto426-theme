@@ -58,7 +58,7 @@
        y="734.36"
        width="2"
        height="16"
-       fill="#2c2c2c"
+       fill="#342941"
        id="rect1" />
   </g>
   <g
@@ -66,7 +66,7 @@
      transform="translate(-86,-666.36)">
     <path
        d="m98 730.36h-2v9h1v1l9-1.2e-4v-2l-8 1.2e-4z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path1" />
   </g>
   <g
@@ -74,7 +74,7 @@
      transform="matrix(-1,0,0,1,146,-666.36)">
     <path
        d="m98 730.36h-2v9h1v1l9-1.2e-4v-2l-8 1.2e-4z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path2" />
   </g>
   <g
@@ -86,7 +86,7 @@
        y="734.36"
        width="2"
        height="16"
-       fill="#2c2c2c"
+       fill="#342941"
        id="rect2" />
   </g>
   <g
@@ -100,14 +100,14 @@
        id="rect3" />
     <path
        d="m40 15v1h-2v1h-2v1h-2v1h-1v1h-1v2h-0.99023v2h-1.0098v2h-0.99023v6h0.99023v2h1.0098v2h0.99023v2h1v1h1v1h2v1h2v1h2v1h6v-1h2v-1h2v-1h2v-1h1v-1h1v-2h0.99023v-2h1.0098v-2h0.99023v-6h-0.99023v-2h-1.0098v-2h-0.99023v-2h-1v-1h-1v-1h-2v-1h-2v-1h-2v-1z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path3" />
   </g>
   <g
      id="top-left-active">
     <path
        d="m 10,17 -2e-7,29 h 8 L 18,12 h -2 l -1,-3e-5 v 1 l -2,-10e-6 0,1 -1,-10e-6 0,1 -1,-10e-6 -10e-7,2 z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path4" />
   </g>
   <g
@@ -117,7 +117,7 @@
        y="12"
        width="6"
        height="34"
-       fill="#2c2c2c"
+       fill="#342941"
        id="rect9" />
   </g>
   <g
@@ -125,7 +125,7 @@
      transform="matrix(-1,0,0,1,79,0)">
     <path
        d="m 10,17 -2e-7,29 H 18 V 12 h -2 l -1,-3e-5 v 1 l -2,-10e-6 v 1 l -1,-10e-6 v 1 l -1,-10e-6 -10e-7,2 z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path12" />
   </g>
   <g
@@ -221,7 +221,7 @@
        style="fill:none" />
     <path
        d="m 40,-40 v 1 h -2 v 1 h -2 v 1 h -2 v 1 h -1 v 1 h -1 v 2 h -0.99023 v 2 h -1.0098 v 2 h -0.99023 v 6 h 0.99023 v 2 h 1.0098 v 2 H 32 v 2 h 1 v 1 h 1 v 1 h 2 v 1 h 2 v 1 h 2 v 1 h 6 v -1 h 2 v -1 h 2 v -1 h 2 v -1 h 1 v -1 h 1 v -2 h 0.99023 v -2 h 1.0098 v -2 h 0.99023 v -6 h -0.99023 v -2 h -1.0098 v -2 H 54 v -2 h -1 v -1 h -1 v -1 h -2 v -1 h -2 v -1 h -2 v -1 z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path9" />
   </g>
   <g

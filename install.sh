@@ -11,26 +11,25 @@ OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
-  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
-  -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+  -t, --theme VARIANT     Specify theme variant [default] (Default: default)
+  -c, --color VARIANT     Specify color variant [dark] (Default: dark)
+  -s, --size VARIANT      Specify size variant [standard] (Default: standard)
 
   -i, --icon VARIANT      Specify icon variant(s) for shell panel activities button
                           [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie|solus|kali]
                           (Default: ChromeOS style)
 
-  -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
-  -f, --fixed             Fixed accent(blue) color for gnome-shell >= 47 libadwaita theme
+  -l, --libadwaita        Link installed Anto426 gtk-4.0 theme to config folder for all libadwaita apps
+  -f, --fixed             Fixed accent color for gnome-shell >= 47 libadwaita theme
 
-  --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|(nord/dracula)] (Options can mix)
+  --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|dock] (Options can mix)
                           1. solid              No transparency panel variant
                           2. compact            No floating panel variant
                           3. black              Full black variant
-                          4. primary            Change radio icon checked color to primary theme color (Default is Green)
+                          4. primary            Change radio icon checked color to primary theme color
                           5. macos              Change window buttons to macOS style
                           6. submenu            Set normal submenus color contrast (dark submenu style on dark version)
-                          7. [nord|dracula]     Nord/dracula colorscheme themes (nord and dracula can not mix use!)
-                          8. dock               Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
+                          7. dock               Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
 
   --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
                           1. 3px
@@ -39,7 +38,7 @@ OPTIONS:
                           ...
                           13. 15px
 
-  --shell                 install gnome-shell version [38|40|42|44|46] (Without this option script will detect shell version and install the right theme)
+  --shell                 install gnome-shell version [38|40|42|44|46|47|48] (Without this option script will detect shell version and install the right theme)
                           1. 38                 Gnome-shell version <= 38.0
                           2. 40                 Gnome-shell version = 40.0
                           3. 42                 Gnome-shell version = 42.0
@@ -169,18 +168,6 @@ while [[ "$#" -gt 0 ]]; do
             echo -e "Install with themed sub-menus ..."
             shift
             ;;
-          nord)
-            nord="true"
-            ctype="-Nord"
-            echo -e "Install nord colorscheme ..."
-            shift
-            ;;
-          dracula)
-            dracula="true"
-            ctype="-Dracula"
-            echo -e "Install dracula colorscheme ..."
-            shift
-            ;;
           dock)
             dockfix="true"
             echo -e "\nFix 'dash-to-dock' or 'ubuntu-dock' style ..."
@@ -202,44 +189,8 @@ while [[ "$#" -gt 0 ]]; do
       shift
       for variant in "$@"; do
         case "$variant" in
-          default)
+          default|anto426)
             themes+=("${THEME_VARIANTS[0]}")
-            shift
-            ;;
-          purple)
-            themes+=("${THEME_VARIANTS[1]}")
-            shift
-            ;;
-          pink)
-            themes+=("${THEME_VARIANTS[2]}")
-            shift
-            ;;
-          red)
-            themes+=("${THEME_VARIANTS[3]}")
-            shift
-            ;;
-          orange)
-            themes+=("${THEME_VARIANTS[4]}")
-            shift
-            ;;
-          yellow)
-            themes+=("${THEME_VARIANTS[5]}")
-            shift
-            ;;
-          green)
-            themes+=("${THEME_VARIANTS[6]}")
-            shift
-            ;;
-          teal)
-            themes+=("${THEME_VARIANTS[7]}")
-            shift
-            ;;
-          grey)
-            themes+=("${THEME_VARIANTS[8]}")
-            shift
-            ;;
-          all)
-            themes+=("${THEME_VARIANTS[@]}")
             shift
             ;;
           -*)
@@ -257,19 +208,9 @@ while [[ "$#" -gt 0 ]]; do
       shift
       for variant in "$@"; do
         case "$variant" in
-          standard)
+          dark)
             colors+=("${COLOR_VARIANTS[0]}")
             lcolors+=("${COLOR_VARIANTS[0]}")
-            shift
-            ;;
-          light)
-            colors+=("${COLOR_VARIANTS[1]}")
-            lcolors+=("${COLOR_VARIANTS[1]}")
-            shift
-            ;;
-          dark)
-            colors+=("${COLOR_VARIANTS[2]}")
-            lcolors+=("${COLOR_VARIANTS[2]}")
             shift
             ;;
           -*)
@@ -289,10 +230,6 @@ while [[ "$#" -gt 0 ]]; do
         case "$variant" in
           standard)
             sizes+=("${SIZE_VARIANTS[0]}")
-            shift
-            ;;
-          compact)
-            sizes+=("${SIZE_VARIANTS[1]}")
             shift
             ;;
           -*)
@@ -432,14 +369,12 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
 fi
 
 if [[ "${#lcolors[@]}" -eq 0 ]] ; then
-  lcolors=("${COLOR_VARIANTS[1]}")
+  lcolors=("${COLOR_VARIANTS[0]}")
 fi
 
 if [[ ${remove} == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_link
-  elif [[ "$all" == 'true' ]]; then
-    uninstall_theme && uninstall_link
   else
     uninstall_theme
   fi

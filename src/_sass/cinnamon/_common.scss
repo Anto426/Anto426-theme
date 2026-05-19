@@ -297,15 +297,15 @@ $submenu_item_radius: $popup-radius - $space-size;
       color: $text !important;
       background-color: $fill !important;
     } @else {
-      color: rgba(black, 0.75) !important;
-      background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
+      background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92)) !important;
     }
 
     .popup-menu-item {
       @if $submenu_style == 'true' {
         color: $text !important;
       } @else {
-        color: rgba(black, 0.75) !important;
+        color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
       }
 
       &:active {
@@ -313,8 +313,8 @@ $submenu_item_radius: $popup-radius - $space-size;
           color: $text !important;
           background-color: $divider !important;
         } @else {
-          color: rgba(black, 0.85) !important;
-          background-color: rgba(black, 0.2) !important;
+          color: if($variant == 'light', rgba(black, 0.85), $text) !important;
+          background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.22)) !important;
         }
       }
 
@@ -322,7 +322,7 @@ $submenu_item_radius: $popup-radius - $space-size;
         @if $submenu_style == 'true' {
           color: $text-disabled !important;
         } @else {
-          color: rgba(black, 0.45) !important;
+          color: if($variant == 'light', rgba(black, 0.45), $text-disabled) !important;
         }
       }
 
@@ -330,18 +330,18 @@ $submenu_item_radius: $popup-radius - $space-size;
         @if $submenu_style == 'true' {
           color: $text-secondary-disabled !important;
         } @else {
-          color: rgba(black, 0.35) !important;
+          color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled) !important;
         }
       }
     }
 
     .popup-inactive-menu-item {
-      @if $submenu_style == 'true' {
-        color: $text-secondary-disabled !important;
-      } @else {
-        color: rgba(black, 0.35) !important;
-      }
+    @if $submenu_style == 'true' {
+      color: $text-secondary-disabled !important;
+    } @else {
+      color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled) !important;
     }
+  }
 
     StScrollBar {
       padding: 4px;
@@ -1447,8 +1447,8 @@ $submenu_item_radius: $popup-radius - $space-size;
       color: $text !important;
       background-color: $fill !important;
     } @else {
-      color: rgba(black, 0.75) !important;
-      background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
+      background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92)) !important;
     }
 
     .popup-menu-item {
@@ -1460,7 +1460,7 @@ $submenu_item_radius: $popup-radius - $space-size;
       @if $submenu_style == 'true' {
         color: $text !important;
       } @else {
-        color: rgba(black, 0.75) !important;
+        color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
       }
 
       &:ltr { padding-left: $space-size; }
@@ -1473,8 +1473,8 @@ $submenu_item_radius: $popup-radius - $space-size;
           color: $text !important;
           background-color: $divider !important;
         } @else {
-          color: rgba(black, 0.75) !important;
-          background-color: on(white, divider) !important;
+          color: if($variant == 'light', rgba(black, 0.75), $text) !important;
+          background-color: if($variant == 'light', on(white, divider), rgba($primary, 0.22)) !important;
         }
       }
 
@@ -1910,8 +1910,8 @@ $submenu_item_radius: $popup-radius - $space-size;
     color: $text !important;
     background-color: $fill !important;
   } @else {
-    color: rgba(black, 0.75) !important;
-    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+    color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92)) !important;
   }
 
   > StBoxLayout:first-child {
@@ -1927,8 +1927,8 @@ $submenu_item_radius: $popup-radius - $space-size;
         &:hover { background-color: $divider !important; }
         &:active { background-color: $track !important; }
       } @else {
-        &:hover { background-color: on(white, divider) !important; }
-        &:active { background-color: on(white, track) !important; }
+        &:hover { background-color: if($variant == 'light', on(white, divider), rgba($primary, 0.18)) !important; }
+        &:active { background-color: if($variant == 'light', on(white, track), rgba($primary, 0.28)) !important; }
       }
 
       StIcon { icon-size: 16px; }

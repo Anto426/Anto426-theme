@@ -58,8 +58,8 @@ $submenu_item_radius: $popup-radius - $space-size;
       color: $text-secondary;
       background-color: $fill;
     } @else {
-      background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
-      color: rgba(black, 0.75);
+      background-color: if($variant == 'light', rgba(black, 0.15), rgba($surface, 0.92));
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary);
     }
 
     &.selected {
@@ -67,8 +67,8 @@ $submenu_item_radius: $popup-radius - $space-size;
         color: $text;
         background-color: $secondary-fill;
       } @else {
-        background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5);
-        color: rgba(black, 0.85);
+        background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.18));
+        color: if($variant == 'light', rgba(black, 0.85), $text);
       }
     }
 
@@ -77,8 +77,8 @@ $submenu_item_radius: $popup-radius - $space-size;
         color: $text;
         background-color: $divider;
       } @else {
-        background-color: #dfdfdf;
-        color: rgba(black, 0.75);
+        background-color: if($variant == 'light', rgba(black, 0.18), rgba($primary, 0.24));
+        color: if($variant == 'light', rgba(black, 0.75), $text);
       }
     }
 
@@ -87,8 +87,8 @@ $submenu_item_radius: $popup-radius - $space-size;
         color: $text;
         background-color: darken(rgba($primary, 0.2), 10%);
       } @else {
-        background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0);
-        color: rgba(black, 0.75);
+        background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.28));
+        color: if($variant == 'light', rgba(black, 0.75), $text);
       }
     }
 
@@ -96,7 +96,7 @@ $submenu_item_radius: $popup-radius - $space-size;
       @if $submenu_style == 'true' {
         color: $text-secondary-disabled;
       } @else {
-        color: rgba(black, 0.35);
+        color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled);
       }
     }
   }
@@ -140,8 +140,8 @@ $submenu_item_radius: $popup-radius - $space-size;
     color: $text;
     background-color: $fill;
   } @else {
-    color: rgba(black, 0.75);
-    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+    color: if($variant == 'light', rgba(black, 0.75), $text-secondary);
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92));
   }
 
   .popup-menu-item {
@@ -152,7 +152,7 @@ $submenu_item_radius: $popup-radius - $space-size;
     @if $submenu_style == 'true' {
       color: $text;
     } @else {
-      color: rgba(black, 0.75);
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary);
     }
 
     &:hover {
@@ -160,8 +160,8 @@ $submenu_item_radius: $popup-radius - $space-size;
         color: $text;
         background-color: $secondary-fill;
       } @else {
-        color: rgba(black, 0.85);
-        background-color: rgba(black, 0.15);
+        color: if($variant == 'light', rgba(black, 0.85), $text);
+        background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.18));
       }
     }
 
@@ -170,13 +170,13 @@ $submenu_item_radius: $popup-radius - $space-size;
         color: $text;
         background-color: $divider;
       } @else {
-        color: rgba(black, 0.85);
-        background-color: rgba(black, 0.2);
+        color: if($variant == 'light', rgba(black, 0.85), $text);
+        background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.24));
       }
     }
 
     &.selected:active {
-      color: rgba(black, 0.75);
+      color: if($variant == 'light', rgba(black, 0.75), $text);
       @if ($submenu_style == 'true') {
         color: $text !important;
         background-color: $base !important;
@@ -187,7 +187,7 @@ $submenu_item_radius: $popup-radius - $space-size;
       @if $submenu_style == 'true' {
         color: $text-secondary-disabled;
       } @else {
-        color: rgba(black, 0.35);
+        color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled);
       }
     }
   }
@@ -221,7 +221,7 @@ $submenu_item_radius: $popup-radius - $space-size;
     .popup-sub-menu & { //submenu separators
       margin: 0 32px 0 0;
       @if $submenu_style == 'false' {
-        background-color: rgba(black, 0.10);
+        background-color: if($variant == 'light', rgba(black, 0.10), rgba($grey-450, 0.38));
       }
     }
   }

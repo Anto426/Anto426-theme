@@ -147,7 +147,7 @@ StScrollBar {
 
 /* Slider */
 
-$slider_color: if($variant == 'light', $primary, white);
+$slider_color: $primary;
 
 .slider {
   height: 20px;
@@ -778,8 +778,8 @@ $submenu_item_radius: $popup-radius - $space-size;
 
   .popup-sub-menu {
     margin: 0 $space-size;
-    color: rgba(black, 0.75);
-    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+    color: if($variant == 'light', rgba(black, 0.75), $text-secondary);
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92));
     border-radius: 0 0 $submenu_item_radius $submenu_item_radius;
     border: none;
     box-shadow: none;
@@ -788,22 +788,22 @@ $submenu_item_radius: $popup-radius - $space-size;
     .popup-menu-item {
       margin: 0;
       border-radius: $submenu_item_radius;
-      color: rgba(black, 0.75);
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary);
       background-image: none;
 
       &:hover {
-        color: rgba(black, 0.85);
-        background-color: rgba(black, 0.15);
+        color: if($variant == 'light', rgba(black, 0.85), $text);
+        background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.18));
       }
 
       &:active {
-        color: rgba(black, 0.85);
-        background-color: rgba(black, 0.2);
+        color: if($variant == 'light', rgba(black, 0.85), $text);
+        background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.24));
       }
 
-      &.selected:active { color: rgba(black, 0.75); }
+      &.selected:active { color: if($variant == 'light', rgba(black, 0.75), $text); }
 
-      &:insensitive { color: rgba(black, 0.35); }
+      &:insensitive { color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled); }
 
       &:not(:first-child):last-child {
         border-radius: 0 0 $material-radius $material-radius;
@@ -840,17 +840,17 @@ $submenu_item_radius: $popup-radius - $space-size;
       }
 
       &.selected {
-        background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5);
-        color: rgba(black, 0.85);
+        background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.18));
+        color: if($variant == 'light', rgba(black, 0.85), $text);
       }
 
       &:active {
-        background-color: #dfdfdf;
-        color: rgba(black, 0.75);
+        background-color: if($variant == 'light', rgba(black, 0.18), rgba($primary, 0.24));
+        color: if($variant == 'light', rgba(black, 0.75), $text);
       }
 
-      &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); color: rgba(black, 0.75); }
-      &:insensitive { color: rgba(black, 0.35); }
+      &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.28)); color: if($variant == 'light', rgba(black, 0.75), $text); }
+      &:insensitive { color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled); }
     }
 
     &.selected {
@@ -2307,26 +2307,27 @@ StWidget.focused .app-well-app-running-dot {
     }
 
     & .folder-name-entry {
-      border: none;
-      color: on(dark);
-      background-color: rgba(white, 0.15);
+      border: 1px solid rgba($grey-450, 0.30);
+      color: $text;
+      background-color: rgba($surface, 0.38);
       selection-background-color: $primary;
-      selected-color: on(dark);
+      selected-color: $text;
       width: 300px;
 
       &:focus {
-        color: on(dark);
-        background-color: rgba(white, 0.25);
+        color: $text;
+        background-color: rgba($surface, 0.54);
+        border-color: $primary;
       }
 
-      .search-entry-icon { color: rgba(white, 0.85); }
+      .search-entry-icon { color: $text-secondary; }
 
       &:hover, &:focus {
-        .search-entry-icon { color: rgba(white, 0.95); }
+        .search-entry-icon { color: $text; }
       }
 
       &:insensitive, StLabel.hint-text {
-        color: rgba(white, 0.45);
+        color: $text-disabled;
       }
     }
 

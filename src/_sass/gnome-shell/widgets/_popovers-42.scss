@@ -54,8 +54,8 @@
         color: $text-secondary !important;
         background-color: $fill !important;
       } @else {
-        background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
-        color: rgba(black, 0.75) !important;
+        background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92)) !important;
+        color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
       }
 
       &:hover, &:focus, &.selected {
@@ -63,8 +63,8 @@
           color: $text !important;
           background-color: $secondary-fill !important;
         } @else {
-          background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5) !important;
-          color: rgba(black, 0.85) !important;
+          background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.18)) !important;
+          color: if($variant == 'light', rgba(black, 0.85), $text) !important;
         }
       }
 
@@ -73,8 +73,8 @@
           color: $text !important;
           background-color: $divider !important;
         } @else {
-          background-color: #dfdfdf !important;
-          color: rgba(black, 0.75) !important;
+          background-color: if($variant == 'light', rgba(black, 0.18), rgba($primary, 0.24)) !important;
+          color: if($variant == 'light', rgba(black, 0.75), $text) !important;
         }
       }
 
@@ -83,8 +83,8 @@
           color: $text !important;
           background-color: darken(rgba($primary, 0.2), 10%) !important;
         } @else {
-          background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0) !important;
-          color: rgba(black, 0.75) !important;
+          background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.28)) !important;
+          color: if($variant == 'light', rgba(black, 0.75), $text) !important;
         }
       }
 
@@ -92,7 +92,7 @@
         @if $submenu_style == 'true' {
           color: $text-secondary-disabled !important;
         } @else {
-          color: rgba(black, 0.35) !important;
+          color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled) !important;
         }
       }
     }
@@ -136,8 +136,8 @@
       color: $text !important;
       background-color: $fill !important;
     } @else {
-      color: rgba(black, 0.75) !important;
-      background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+      color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
+      background-color: if($variant == 'light', rgba(black, 0.10), rgba($surface, 0.92)) !important;
     }
 
     .popup-menu-item {
@@ -148,7 +148,7 @@
       @if $submenu_style == 'true' {
         color: $text !important;
       } @else {
-        color: rgba(black, 0.75) !important;
+        color: if($variant == 'light', rgba(black, 0.75), $text-secondary) !important;
       }
 
       &:hover, &:focus, &.selected {
@@ -156,8 +156,8 @@
           color: $text !important;
           background-color: $secondary-fill !important;
         } @else {
-          color: rgba(black, 0.85) !important;
-          background-color: rgba(black, 0.15) !important;
+          color: if($variant == 'light', rgba(black, 0.85), $text) !important;
+          background-color: if($variant == 'light', rgba(black, 0.15), rgba($primary, 0.18)) !important;
         }
       }
 
@@ -166,8 +166,8 @@
           color: $text !important;
           background-color: $divider !important;
         } @else {
-          color: rgba(black, 0.85) !important;
-          background-color: rgba(black, 0.2) !important;
+          color: if($variant == 'light', rgba(black, 0.85), $text) !important;
+          background-color: if($variant == 'light', rgba(black, 0.2), rgba($primary, 0.24)) !important;
         }
       }
 
@@ -175,7 +175,7 @@
         @if $submenu_style == 'true' {
           color: $text-secondary !important;
         } @else {
-          color: rgba(black, 0.75) !important;
+          color: if($variant == 'light', rgba(black, 0.75), $text) !important;
         }
       }
 
@@ -183,7 +183,7 @@
         @if $submenu_style == 'true' {
           color: $text-secondary-disabled !important;
         } @else {
-          color: rgba(black, 0.35) !important;
+          color: if($variant == 'light', rgba(black, 0.35), $text-secondary-disabled) !important;
         }
       }
     }
@@ -217,7 +217,7 @@
         margin: $space-size $space-size * 9 $space-size $space-size * 4 !important;
 
         @if $submenu_style == 'false' {
-          background-color: rgba(black, 0.10);
+          background-color: if($variant == 'light', rgba(black, 0.10), rgba($grey-450, 0.38));
         }
       }
     }

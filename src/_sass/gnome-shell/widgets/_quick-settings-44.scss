@@ -193,8 +193,8 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   }
 
   @else {
-    background-color: white !important;
-    color: rgba(black, 0.65) !important;
+    background-color: rgba($surface, 0.92) !important;
+    color: $text-secondary !important;
   }
 
   &:insensitive {
@@ -206,8 +206,8 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     }
 
     @else {
-      background-color: white !important;
-      color: rgba(black, 0.65) !important;
+      background-color: rgba($surface, 0.92) !important;
+      color: $text-secondary !important;
     }
   }
 
@@ -234,25 +234,24 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     }
 
     @else {
-      color: rgba(black, 0.65) !important;
+      color: $text-secondary !important;
 
       StLabel {
-        // FIXME: How to set color of network menu item on right
-        color: rgba(black, 0.65);
+        color: $text-secondary;
       }
 
       &:focus, &:hover, &.selected {
-        color: rgba(black, 0.75) !important;
-        background-color: rgba(black, 0.1) !important;
+        color: $text !important;
+        background-color: rgba($primary, 0.18) !important;
       }
 
       &:active {
-        color: rgba(black, 0.75) !important;
-        background-color: rgba(black, 0.2) !important;
+        color: $text !important;
+        background-color: rgba($primary, 0.28) !important;
       }
 
       &:insensitive {
-        color: rgba(black, 0.25) !important;
+        color: $text-secondary-disabled !important;
       }
     }
 
@@ -280,7 +279,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
       }
 
       @else {
-        background-color: rgba(black, 0.1) !important;
+        background-color: rgba($grey-450, 0.38) !important;
       }
     }
   }

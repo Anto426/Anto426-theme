@@ -80,14 +80,14 @@
     <linearGradient
        id="color-background">
       <stop
-         stop-color="#212121"
+         stop-color="#281f33"
          offset="1"
          id="stop25" />
     </linearGradient>
     <linearGradient
        id="color-base">
       <stop
-         stop-color="#2C2C2C"
+         stop-color="#342941"
          offset="1"
          id="stop28" />
     </linearGradient>

@@ -50,8 +50,8 @@ $circular-radius: 9999px;
 $panel-corner-radius: 0; // For gnome-shell
 
 // font families
-$font-family: "M+ 1c", Roboto, Cantarell, Sans-Serif;
-$large-font-family: Roboto, "M+ 1c", Cantarell, Sans-Serif;
+$font-family: "Segoe UI Variable Static Text", "Segoe UI", Cantarell, Sans-Serif;
+$large-font-family: "Segoe UI Variable Static Display", "Segoe UI", Cantarell, Sans-Serif;
 
 // font sizes
 $root-font-size: if($compact == 'false', 14px, 13px);
@@ -125,13 +125,11 @@ $shadow-z12:
   0 12px 12px 2px rgba(black, 0.14),
   0 5px 13px 4px rgba(black, 0.12);
 $shadow-z16:
-  0 8px 6px -5px rgba(black, 0.2),
-  0 16px 16px 2px rgba(black, 0.14),
-  0 6px 18px 5px rgba(black, 0.12);
+  0 12px 24px -8px rgba(black, 0.34),
+  0 4px 14px -4px rgba(black, 0.26);
 $shadow-z24:
-  0 11px 11px -7px rgba(black, 0.2),
-  0 24px 24px 3px rgba(black, 0.14),
-  0 9px 28px 8px rgba(black, 0.12);
+  0 18px 36px -12px rgba(black, 0.38),
+  0 8px 22px -8px rgba(black, 0.30);
 
 $text-shadow:
   0 1px 1px rgba(black, 0.2),
@@ -153,5 +151,5 @@ $shell-shadow-z1: 0 1px 2px rgba(black, 0.25);
 $shell-shadow-z2: 0 3px 3px rgba(black, 0.32);
 $shell-shadow-z3: 0 3px 8px rgba(black, 0.2);
 $shell-shadow-z4: 0 6px 10px rgba(black, 0.32);
-$shell-shadow-z5: 0 10px 15px rgba(black, 0.45);
-$shell-shadow-z6: 0 12px 20px rgba(black, 0.6);
+$shell-shadow-z5: 0 10px 18px rgba(black, 0.40);
+$shell-shadow-z6: 0 14px 24px rgba(black, 0.46);

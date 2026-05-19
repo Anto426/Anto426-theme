@@ -123,27 +123,28 @@ StWidget.focused {
     .folder-name-entry {
       min-height: 28px;
       padding: $space-size;
-      border: none;
-      color: on($system);
-      background-color: rgba(white, 0.15);
-      caret-color: on($system);
-      selection-background-color: on($system, divider) !important;
-      selected-color: white !important;
+      border: 1px solid rgba($grey-450, 0.30);
+      color: $text;
+      background-color: rgba($surface, 0.38);
+      caret-color: $primary;
+      selection-background-color: rgba($primary, 0.35) !important;
+      selected-color: $text !important;
       width: 300px;
 
       &:focus {
-        color: on($system);
-        background-color: rgba(white, 0.25);
+        color: $text;
+        background-color: rgba($surface, 0.54);
+        border-color: $primary;
       }
 
-      .search-entry-icon { color: rgba(white, 0.85); }
+      .search-entry-icon { color: $text-secondary; }
 
       &:hover, &:focus {
-        .search-entry-icon { color: rgba(white, 0.95); }
+        .search-entry-icon { color: $text; }
       }
 
       &:insensitive, StLabel.hint-text {
-        color: on($system, disabled);
+        color: $text-disabled;
       }
     }
 

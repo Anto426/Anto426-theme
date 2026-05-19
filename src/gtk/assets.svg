@@ -79,28 +79,28 @@
     <linearGradient
        id="color-primary-dark">
       <stop
-         stop-color="#1A73E8"
+         stop-color="#7f6f93"
          offset="1"
          id="stop14" />
     </linearGradient>
     <linearGradient
        id="color-primary-light">
       <stop
-         stop-color="#3281EA"
+         stop-color="#9579b6"
          offset="1"
          id="stop17" />
     </linearGradient>
     <linearGradient
        id="color-background">
       <stop
-         stop-color="#F2F2F2"
+         stop-color="#f6f7fb"
          offset="1"
          id="stop20" />
     </linearGradient>
     <linearGradient
        id="color-background-dark">
       <stop
-         stop-color="#212121"
+         stop-color="#281f33"
          offset="1"
          id="stop23" />
     </linearGradient>
@@ -118,7 +118,7 @@
        x2="40"
        gradientUnits="userSpaceOnUse">
       <stop
-         stop-color="#3C3C3C"
+         stop-color="#635575"
          offset="1"
          id="stop29" />
     </linearGradient>
@@ -684,7 +684,7 @@
        y="233"
        width="144"
        height="54"
-       fill="#2c2c2c"
+       fill="#342941"
        id="rect186" />
     <path
        d="m216 233c0 4.986-4.014 9-9 9h-93c-9.972 0-18 8.028-18 18s8.028 18 18 18h93c4.986 0 9 4.014 9 9v-45z"
@@ -704,7 +704,7 @@
        id="rect191" />
     <path
        d="m216 233c0 4.986-4.014 9-9 9h-93c-9.972 0-18 8.028-18 18s8.028 18 18 18h93c4.986 0 9 4.014 9 9v-45z"
-       fill="#2c2c2c"
+       fill="#342941"
        id="path193" />
   </g>
   <g

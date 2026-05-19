@@ -5,10 +5,10 @@ OPTIPNG="/usr/bin/optipng"
 
 ./make-thumbnails.sh
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula'; do
+for theme in ''; do
+  for type in ''; do
     SRC_FILE="thumbnail${theme}${type}.svg"
-    for color in '' '-Dark'; do
+    for color in '-Dark'; do
       echo
       echo Rendering thumbnail${theme}${color}${type}.png
       $INKSCAPE --export-id=thumbnail${color} \
@@ -20,8 +20,8 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
   done
 done
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula'; do
+for theme in ''; do
+  for type in ''; do
     if [[ ${theme} == '' && ${type} == '' ]]; then
       echo "keep thumbnail.svg"
     else

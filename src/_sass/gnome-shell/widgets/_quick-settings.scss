@@ -101,8 +101,8 @@
     background-color: $surface !important;
     color: $text-secondary !important;
   } @else {
-    background-color: white !important;
-    color: rgba(black, 0.65) !important;
+    background-color: rgba($surface, 0.92) !important;
+    color: $text-secondary !important;
   }
 
   .popup-menu-item {
@@ -126,20 +126,20 @@
         color: $text-secondary-disabled !important;
       }
     } @else {
-      color: rgba(black, 0.65) !important;
+      color: $text-secondary !important;
 
       &:focus, &:hover, &.selected {
-        color: rgba(black, 0.75) !important;
-        background-color: rgba(black, 0.1) !important;
+        color: $text !important;
+        background-color: rgba($primary, 0.18) !important;
       }
 
       &:active {
-        color: rgba(black, 0.75) !important;
-        background-color: rgba(black, 0.2) !important;
+        color: $text !important;
+        background-color: rgba($primary, 0.28) !important;
       }
 
       &:insensitive {
-        color: rgba(black, 0.25) !important;
+        color: $text-secondary-disabled !important;
       }
     }
 
@@ -161,7 +161,7 @@
       @if $submenu_style == 'true' {
         background-color: $border !important;
       } @else {
-        background-color: rgba(black, 0.1) !important;
+        background-color: rgba($grey-450, 0.38) !important;
       }
     }
 

@@ -26,9 +26,9 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Anto426
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
-COLOR_VARIANTS=('' '-Light' '-Dark')
-SIZE_VARIANTS=('' '-Compact')
+THEME_VARIANTS=('')
+COLOR_VARIANTS=('-Dark')
+SIZE_VARIANTS=('')
 
 ctype=
 icon='-default'
@@ -155,7 +155,7 @@ install() {
     cp -r "$SRC_DIR/xfwm4/svg/assets${ELSE_LIGHT:-}-xhdpi/"*.svg                             "$THEME_DIR-xhdpi/xfwm4"
   fi
 
-  if [[ "$macstyle" == "true" && "$ctype" != '' ]] ; then
+  if [[ "$macstyle" == "true" ]] ; then
     xfwm_button
   fi
 
@@ -233,29 +233,9 @@ link_libadwaita() {
 }
 
 xfwm_button() {
-  case "$ctype" in
-    '')
-      button_close="#fd5f51"
-      button_max="#38c76a"
-      button_min="#fdbe04"
-      ;;
-    -Nord)
-      button_close="#bf616a"
-      button_max="#a3be8c"
-      button_min="#ebcb8b"
-      ;;
-    -Dracula)
-      if [[ "$color" == '-Light' ]]; then
-        button_close="#ed5d5d"
-        button_max="#43db68"
-        button_min="#e3d93b"
-      else
-        button_close="#f44d4d"
-        button_max="#4be772"
-        button_min="#e8f467"
-      fi
-      ;;
-  esac
+  button_close="#f38ba8"
+  button_max="#969e9f"
+  button_min="#c6a7aa"
 
   sed -i "s/#fd5f51/${button_close}/g"                                          "${THEME_DIR}/xfwm4/close-active.svg"
   sed -i "s/#fd5f51/${button_close}/g"                                          "${THEME_DIR}/xfwm4/close-prelight.svg"
@@ -397,16 +377,6 @@ install_submenu() {
   sed -i "/\$submenu_style:/s/false/true/" $SRC_DIR/_sass/_tweaks-temp.scss
 }
 
-install_nord() {
-  sed -i "/\@import/s/color-palette-default/color-palette-nord/" $SRC_DIR/_sass/_tweaks-temp.scss
-  sed -i "/\$colorscheme:/s/default/nord/" $SRC_DIR/_sass/_tweaks-temp.scss
-}
-
-install_dracula() {
-  sed -i "/\@import/s/color-palette-default/color-palette-dracula/" $SRC_DIR/_sass/_tweaks-temp.scss
-  sed -i "/\$colorscheme:/s/default/dracula/" $SRC_DIR/_sass/_tweaks-temp.scss
-}
-
 activities_style() {
   sed -i "/\$activities:/s/normal/icon/" $SRC_DIR/_sass/_tweaks-temp.scss
 }
@@ -420,35 +390,7 @@ accent_type() {
 }
 
 install_theme_color() {
-  if [[ "$theme" != '' ]]; then
-    case "$theme" in
-      -Purple)
-        theme_color='purple'
-        ;;
-      -Pink)
-        theme_color='pink'
-        ;;
-      -Red)
-        theme_color='red'
-        ;;
-      -Orange)
-        theme_color='orange'
-        ;;
-      -Yellow)
-        theme_color='yellow'
-        ;;
-      -Green)
-        theme_color='green'
-        ;;
-      -Teal)
-        theme_color='teal'
-        ;;
-      -Grey)
-        theme_color='grey'
-        ;;
-    esac
-    sed -i "/\$theme:/s/default/${theme_color}/" $SRC_DIR/_sass/_tweaks-temp.scss
-  fi
+  :
 }
 
 theme_tweaks() {
@@ -482,14 +424,6 @@ theme_tweaks() {
     install_submenu
   fi
 
-  if [[ "$nord" == "true" ]] ; then
-    install_nord
-  fi
-
-  if [[ "$dracula" == "true" ]] ; then
-    install_dracula
-  fi
-
   if [[ "$activities" = "icon" ]] ; then
     activities_style
   fi
@@ -498,7 +432,7 @@ theme_tweaks() {
     gnome_version
   fi
 
-  if [[ "$fixed" = "true" || "$dracula" == "true" || "$nord" == "true" ]] ; then
+  if [[ "$fixed" = "true" ]] ; then
     accent_type
   fi
 }
@@ -584,9 +518,7 @@ uninstall_theme() {
   for theme in "${THEME_VARIANTS[@]}"; do
     for color in "${COLOR_VARIANTS[@]}"; do
       for size in "${SIZE_VARIANTS[@]}"; do
-        for scheme in '' '-Nord' '-Dracula'; do
-          uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
-        done
+        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" ""
       done
     done
   done
@@ -605,7 +537,7 @@ clean_theme() {
     for theme in "${themes[@]}"; do
       for color in "${colors[@]}"; do
         for size in "${sizes[@]}"; do
-          uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+          uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" ""
         done
       done
     done
