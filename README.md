@@ -31,7 +31,7 @@ To build and register the GTK theme on your system:
 ```
 
 ```bash
-git clone https://github.com/Anto426/Anto426-theme.git
+git clone https://github.com/Arch-repo/Anto426-theme.git
 cd Anto426-theme
 bash ./install-anto426.sh
 ```
@@ -85,3 +85,4 @@ Licensing inherits all upstream GPL specifications; details are found in COPYING
 <div align="center">
   <i>Configured by anto426</i>
 </div>
+
